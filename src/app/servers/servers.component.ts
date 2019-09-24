@@ -13,6 +13,7 @@ export class ServersComponent implements OnInit {
   serverName = 'defaultServer';
   serverCreated = false;
   servers = ['testServer', 'testServer2'];
+  serversDebug = [];
 
   constructor() {
     setTimeout(() => {
@@ -31,5 +32,13 @@ export class ServersComponent implements OnInit {
 
   onUpdateServerName(event: Event) {
     this.serverName = ( event.target as HTMLInputElement ).value;
+  }
+  onAddServer() {
+    this.serversDebug.push('Another Server');
+  }
+
+  onRemoveServer(id: number) {
+    const position = id + 1;
+    this.serversDebug.splice(position, 1);
   }
 }

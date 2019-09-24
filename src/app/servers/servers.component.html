@@ -16,3 +16,20 @@
 <!-- <p>{{ serverCreationStatus }}</p> -->
 <p *ngIf="serverCreated">SERVER WAS CREATED, SERVER NAME is: {{ serverName }}</p>
 <app-server *ngFor="let server of servers"></app-server>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>my servers</h2>
+      <button class="btn btn-primary" (click)="onAddServer()">add server</button>
+      <br><br>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let serverDebug of serversDebug; let i = index"
+          (click)="onRemoveServer(i)">{{ serverDebug }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<hr>
